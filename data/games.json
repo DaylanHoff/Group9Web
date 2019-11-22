@@ -1,0 +1,16 @@
+{
+    "games":[
+        {
+            "id": 1,
+            "name": "Matching Game",
+            "about": "Learn the language by matching the corresponding symbols",
+            "imageUrl": ""
+        },
+        {
+            "id": 2,
+            "name": "Spelling Game",
+            "about": "Learn the language by matching the corresponding symbols",
+            "imageUrl": ""
+        }
+    ]
+}

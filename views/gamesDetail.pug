@@ -1,0 +1,24 @@
+extends layout.pug
+block content
+    br
+    br
+    h1=title
+    div(class="gameBox gridBox")
+    <section id="showcase">
+        <div class="container">
+        div(class="gameImage")
+            img(src=game.imageUrl)
+        div(class="gameDetails")
+            div(class="title")=game.name
+            div
+                label="size:"
+                span=game.size
+            div
+                label="distance:"
+                span=game.distance
+            div
+                label="about:"
+                span=game.about
+            div
+                label="price:"
+                span=game.price

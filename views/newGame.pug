@@ -1,0 +1,28 @@
+extends layout.pug
+block content
+    <section id="boxes">
+    <div class="container">
+    h1=title
+        form(class="orderForm", action="newStar", method="post")
+            div 
+                label="Star Id: "
+                input(type="number", name="id")
+            div
+                label="Name: "
+                input(type="text", name="name")
+            div
+                label="Size: "
+                input(type="number", name="size")
+            div
+                label="Distance:"
+                input(type="number", name="distance")
+            div
+                label="About:"
+                input(type="text", name="about")
+            div
+                label="Price:"
+                input(type="text", name="price")
+            div
+                label="URL to picture:"
+                input(type="text", name="imageUrl")
+            input(type="submit",value="Go")

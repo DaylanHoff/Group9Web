@@ -1,0 +1,181 @@
+html {
+    background:  #35424a;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+ ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.button1 {
+
+    height: 38px;
+    background: #1E90FF;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+}
+
+header {
+
+    background:  #59605c;
+    color: white;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom:  3px #1E90FF solid; 
+}
+header a {
+    color: white;
+    text-decoration: none;
+    text-transform:  uppercase;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+header li {
+    padding: 0 20px 0 20px;
+    display: block;
+    float: left;
+}
+header #branding {
+    float: left;
+}
+
+header  h1 {
+    margin: 0;
+font-style: oblique;
+
+}
+header  h1:hover  {
+     color: DodgerBlue;
+}
+header nav {
+    margin-top: 10px;
+    float: right;
+} 
+
+header .highlight, header .current a {
+    font-weight: bold;
+
+    color: #1E90FF;
+}
+header li:hover{
+    background: orange;
+    font-weight: bold;
+}
+
+
+#showcase {
+    min-height: 400px;
+    background: url("../img/showcase.jpg") no-repeat 0;
+    text-align: center;
+    color: white;
+
+}
+
+#showcase h1 {
+    margin-top: 100px;
+    margin-bottom: 10px;
+    font-size: 55px;
+   
+}
+#showcase p {
+
+    font-size: 20px;
+}
+
+#boxes {
+    margin-top:  20px;
+
+}
+.box {
+    width: 30%;
+    float:  left;
+    padding: 1.5%;
+    text-align: center;
+}
+
+#boxes .box img {
+
+    width: 90px;
+    height: auto;
+}
+
+footer {
+    padding: 20px;
+    margin-top: 0;
+    background: #59605c;
+    text-align: center;
+    color: white;
+        padding-bottom: 23px;
+
+    
+}
+
+ul#services li {
+
+    list-style: none;
+    padding: 20px;
+    border: 1px grey solid;
+    margin-bottom:  4px;
+    background:  white;
+    box-shadow: 2px 3px 1px grey;
+
+    }
+
+
+    aside#sidebar .quote input,    aside#sidebar .quote textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom:  25px;
+
+    }
+
+aside#sidebar button {
+    width: 100%;
+}
+
+ @media (max-width : 768px) {
+    header #branding, header nav, header nav li, #newsletter h1, 
+    newsletter form, #boxes .box , article#main-col, aside#sidebar{
+        
+    float : none;
+    text-align : center;
+    width:  100%;
+    }
+    header {
+        padding-bottom:  20px;
+
+    }
+     header li {
+         width : 100%;
+         display : block;
+     }
+        
+ } 
+
+  .page-title {
+        font-size: 24px;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;   
+       padding-top: 30px; 
+       padding-bottom: 3px; }
