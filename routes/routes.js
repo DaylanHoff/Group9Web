@@ -95,6 +95,56 @@ router.route("/order/:gameId").get(
     }
 );
 
+
+
+router.route("/admin").get(
+    async function (req, res) {
+        if(!req.session.isAdmin){
+            res.redirect("/");
+        }else {
+            var UsersFromDB = await User.find();
+
+            var model = {
+                title: "Users List",
+                users: UsersFromDB,
+                username : req.session.username,
+                userId : req.session.userId,
+                isAdmin : req.session.isAdmin
+            };
+            res.render("userList", model);
+        }
+    }
+);
+
+router.route("/toAdmin/:userId").get(
+    async function (req, res) {
+        if(!req.session.isAdmin){
+            res.redirect("/user/login");
+        }else {
+            var userId = req.params.userId;
+            var user = await User.findOne({_id:userId});
+            if (user) {
+                user.update({"_id": req.params.userId, "roles": "User"},
+                {$set: {"users.$.role": "Admin"}});
+
+                var UsersFromDB = await User.find();
+                var model = {
+                    title: "Users List",
+                    users: UsersFromDB,
+                    username : req.session.username,
+                    userId : req.session.userId,
+                    isAdmin : req.session.isAdmin
+                };
+                res.render("userList", model);
+
+            } else {
+                res.send("You done messed up! Could not find a user with id: " + userId);
+            }
+        }
+    }
+);
+
+
 router.route("/order").post(
     function (req, res) {
         var model = {
