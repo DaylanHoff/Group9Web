@@ -15,7 +15,8 @@ block content
             img(src=game.imageUrl)
             div(class="gameDetails")
                 div(class="title")
-                    a(href="/games/detail/" + game.id)=game.name
+                li
+                    a(href="/games/" + game.id)=game.name
             div(class="gameDetails")
                 div(class="title")
                     a(href="/order/" + game.id)="Buy now!"
