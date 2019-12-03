@@ -1,6 +1,3 @@
-html {
-    background:  #35424a;
-}
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
@@ -10,12 +7,17 @@ body{
     background-color: whitesmoke;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+*:focus {
+    outline: none;
 }
 
+.container {
+    width: 80%;
+    /* margin auto move it to midle*/
+    margin: auto;
+    /* to unstrict scroll bar if content big*/
+    overflow: hidden;
+}
 
  ul {
     margin: 0;
@@ -23,20 +25,25 @@ body{
     list-style: none;
 
 }
-
-.button1 {
-
-    height: 38px;
-    background: #1E90FF;
-    border: none;
-    padding-left: 20px;
-    padding-right: 20px;
+.dark {
+    margin-right: 30px;
+    padding: 35px;
+    background:  #35424a;
     color: white;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    padding-bottom : 50px;
+    border : 2px solid #1E90FF;
+        
+     border-radius: 10px;
+     box-shadow: 20px 10px 12px 1px   #35424a ;
+
+
 }
 
 header {
 
-    background:  #59605c;
+    background:  #313433;
     color: white;
     padding-top: 30px;
     min-height: 70px;
@@ -51,6 +58,7 @@ header a {
 }
 
 header li {
+/* float: left; */
     padding: 0 20px 0 20px;
     display: block;
     float: left;
@@ -67,6 +75,9 @@ font-style: oblique;
 header  h1:hover  {
      color: DodgerBlue;
 }
+    header  h1:hover  span{
+     color: white;
+}
 header nav {
     margin-top: 10px;
     float: right;
@@ -74,21 +85,15 @@ header nav {
 
 header .highlight, header .current a {
     font-weight: bold;
-
     color: #1E90FF;
 }
 header li:hover{
-    background: orange;
+    background: rgba(0, 123, 157, 0.8);
     font-weight: bold;
 }
-
-
 #showcase {
-    min-height: 400px;
-    background: url("../img/showcase.jpg") no-repeat 0;
     text-align: center;
-    color: white;
-
+    color: rgb(19, 19, 19);
 }
 
 #showcase h1 {
@@ -102,10 +107,14 @@ header li:hover{
     font-size: 20px;
 }
 
+/*boxexs stye */
 #boxes {
     margin-top:  20px;
 
 }
+button:hover {
+    cursor: pointer;
+} 
 .box {
     width: 30%;
     float:  left;
@@ -125,9 +134,32 @@ footer {
     background: #59605c;
     text-align: center;
     color: white;
-        padding-bottom: 23px;
+    padding-bottom: 23px;
+}
 
+
+/* about */
+/* Side BAR */
+aside#sidebar {
+
+    float: right;
+    width: 30%;
+    margin-top: 20px;
     
+}
+.pop  {
+height: 68vh;    
+}
+article#main-col {
+    float: left;
+    width: 55%;
+}
+
+/*services */
+aside#sidebar {
+         margin-top:  50px;
+
+
 }
 
 ul#services li {
@@ -153,9 +185,12 @@ aside#sidebar button {
     width: 100%;
 }
 
+
+ /*    maedia uery */
  @media (max-width : 768px) {
-    header #branding, header nav, header nav li, #newsletter h1, 
-    newsletter form, #boxes .box , article#main-col, aside#sidebar{
+
+    /*remaove float */
+    header #branding, header nav, header nav li, #newsletter h1, newsletter form, #boxes .box , article#main-col, aside#sidebar{
         
     float : none;
     text-align : center;
@@ -163,13 +198,27 @@ aside#sidebar button {
     }
     header {
         padding-bottom:  20px;
-
     }
      header li {
          width : 100%;
          display : block;
      }
+    #showcase h1 {
+    margin-top: 40px;
+        font-size: 35px;
+
+    }
         
+    #newsletter button {
+        display: block;
+        width: 100%;
+
+    }
+
+     #newsltter form input[type='email'] {
+         width: 100%;
+         margin-bottom: 5px;
+     }
  } 
 
   .page-title {
