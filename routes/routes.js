@@ -61,16 +61,7 @@ router.route("/games").get(
     }
 );
 
-router.route("/order").get(
-    function (req, res) {
-        var model = {
-            title: "Game Order Page",
-        };
-        res.render("order", model);
-    }
-);
-
-router.route("/order/:gameId").get(
+router.route("/games/:gameId").get(
     async function (req, res) {
         if(!req.session.username){
             res.redirect("/user/login");
@@ -81,20 +72,19 @@ router.route("/order/:gameId").get(
 
             if (game) {
                 var model = {
-                    title: "Game Detail Page",
+                    title: "Playing 9 time!",
                     game: game,
                     username : req.session.username,
                     userId : req.session.userId,
                     isAdmin : req.session.isAdmin
                 };
-                res.render("order", model);
+                res.render(game.name, model);
             } else {
                 res.send("You done messed up! Could not find a weapon with id: " + gameId);
             }
         }
     }
 );
-
 
 
 router.route("/admin").get(
@@ -143,19 +133,4 @@ router.route("/toAdmin/:userId").get(
         }
     }
 );
-
-
-router.route("/order").post(
-    function (req, res) {
-        var model = {
-            title: "Game Detail Page",
-            game: game,
-            username : req.session.username,
-            userId : req.session.userId,
-            isAdmin : req.session.isAdmin
-        };
-        res.send("Order is now complete! Wait one to an infinite point in time for your game to arive!");
-    }
-);
-
 module.exports = router;
