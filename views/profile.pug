@@ -1,0 +1,13 @@
+extends layout.pug
+block content
+    br
+    br
+    div(id="showcase")
+        label.
+            #[strong="Username: "] #{username}
+        br
+        label.
+            #[strong="User ID: "] #{userId}
+        br
+        label.
+            #[strong="Admin Status: "] #{isAdmin ? "Admin" : "Not Admin"}
