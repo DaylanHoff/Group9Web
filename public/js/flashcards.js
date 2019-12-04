@@ -31,10 +31,14 @@ function checkAnswer() {
     }
     document.getElementById('character' + onQuestion).style.display = 'none';
     onQuestion++;
-    document.getElementById('character' + onQuestion).style.display = 'block';
+    if(document.getElementById('character' + onQuestion) === null){
+        end()
+    } else {
+        document.getElementById('character' + onQuestion).style.display = 'block';
+    }
     answer.value = '';
 }
 
 function end() {
-    window.location.replace("http://localhost:3003/games");
+    window.location.replace("http://localhost:3000/games");
 }
