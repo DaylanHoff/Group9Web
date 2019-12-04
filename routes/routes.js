@@ -18,6 +18,13 @@ const GamesSchema = new Schema(
         imageUrl: String
     },
 );
+const JapaneseSchema = new Schema(
+    {
+        _id: Number,
+        romaji: String,
+        hiragana: String
+    }
+)
 const UserSchema = new Schema(
     {
         _id: ObjectId,
@@ -31,6 +38,7 @@ const UserSchema = new Schema(
 );
 const Game = mongoose.model("Game", GamesSchema);
 const User = mongoose.model("User", UserSchema);
+const Japanese = mongoose.model("hiragana", JapaneseSchema);
 const router = express.Router();
 
 router.route("/").get(
@@ -68,20 +76,22 @@ router.route("/games/:gameId").get(
         }else {
             var gameId = req.params.gameId;
             var game = await Game.findOne({_id:gameId});
-            console.log(game);
-
-            if (game) {
-                var model = {
-                    title: "Playing 9 time!",
-                    game: game,
-                    username : req.session.username,
-                    userId : req.session.userId,
-                    isAdmin : req.session.isAdmin
-                };
-                res.render(game.name, model);
-            } else {
-                res.send("You done messed up! Could not find a weapon with id: " + gameId);
-            }
+            var arr = [];
+            Japanese.find(function (err, japanese) {
+                if (game) {
+                    var model = {
+                        title: "Playing 9 time!",
+                        game: game,
+                        username : req.session.username,
+                        userId : req.session.userId,
+                        isAdmin : req.session.isAdmin,
+                        characterOrder : japanese
+                    };
+                    res.render(game.name, model);
+                } else {
+                    res.send("You done messed up! Could not find a weapon with id: " + gameId);
+                }
+            });
         }
     }
 );
