@@ -29,11 +29,11 @@ function checkAnswer() {
         scoreNumber = scoreNumber + 100
         score.innerHTML = scoreNumber
     }
-    document.getElementById('character' + onQuestion).style.display = 'none';
     onQuestion++;
     if(document.getElementById('character' + onQuestion) === null){
         end()
     } else {
+        document.getElementById('character' + (onQuestion - 1)).style.display = 'none';
         document.getElementById('character' + onQuestion).style.display = 'block';
     }
     answer.value = '';
