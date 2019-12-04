@@ -326,3 +326,10 @@ aside#sidebar button {
       .answers {
           display: none;
       }
+
+      .forms {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        width: 200px;
+      }
