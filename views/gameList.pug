@@ -10,11 +10,10 @@ block content
                 a(href="/games/detail/" + game.id)
                 img(src=game.imageUrl)
             div(class="gameDetails")
-                div(class="games")
+                div(class="title")
                     .button.instagram
                         a.button1(href="/games/" + game.id)="Play "+game.name
                 br
             div
                 label="About: "
                 span=game.about
-            br

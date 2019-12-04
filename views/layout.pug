@@ -4,37 +4,34 @@ html
         script(src="/js/main.js")
         link(href="/css/main.css", rel="stylesheet", type="text/css")
     body
-    header
-            <div class="container">
-                <div id="branding">
-                    
-                    <h1> <span class="highlight">9</span>Time</h1> 
-                </div>
-
-                <nav>
-                    <ul>
-                li
-                    a(href="/") Home
-                li 
-                    a(href="/games") Games
-                li 
-                    a(href="/order") Order
-                if(isAdmin)
-                    li
-                        a(href="data/newGame")="Add Game"
-                    li
-                        a(href="admin")="AdminCp"
-                if(username)
-                    li
-                    a(href="/user/profile/"+userId)=username
-                    li
-                    a(href="/user/logout")="Logout"
-                else
-                    li
-                        a(href="/user/Register")="Register"
-                    li
-                        a(href="/user/Login")="Login"
-                    </ul>
-                </nav>
+    <header>
+        <div class="container">
+            <div id="branding">
+                
+                <h1> <span class="highlight">9</span>Time</h1> 
             </div>
-            block content
+
+            <nav>
+                <ul>
+            li
+                a(href="/") Home
+            li 
+                a(href="/games") games
+            if(isAdmin)
+                li
+                    a(href="admin")="AdminCp"
+            if(username)
+                li
+                    a(href="/user/profile/"+userId)=username
+                li
+                    a(href="/user/logout")="Logout"
+            else
+                li
+                    a(href="/user/Register")="Register"
+                li
+                    a(href="/user/Login")="Login"
+                </ul>
+            </nav>
+        </div>
+    </header>
+        block content
