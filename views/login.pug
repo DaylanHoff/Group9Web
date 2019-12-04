@@ -3,14 +3,15 @@ block content
     <section id="showcase">
     <div class="container">
     block content
-        h1="Please Login"
+        h2="Please Login"
         if(message)
             div(class="error")=message
-        form(action="/user/Login", method="Post")
-            div
-                label="Username:"
-                input(type="text", name="username")
-            div
-                label="Password:"
-                input(type="password", name="password")
-            input(type="submit", value="Login")
+        div(class="forms")=forms
+            form(action="/user/Login", method="Post")
+                div
+                    label="Username:"
+                    input(type="text", name="username")
+                div
+                    label="Password:"
+                    input(type="password", name="password")
+                input(type="submit", value="Login")
