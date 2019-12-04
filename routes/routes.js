@@ -76,7 +76,6 @@ router.route("/games/:gameId").get(
         }else {
             var gameId = req.params.gameId;
             var game = await Game.findOne({_id:gameId});
-            var arr = [];
             Japanese.find(function (err, japanese) {
                 if (game) {
                     var model = {
