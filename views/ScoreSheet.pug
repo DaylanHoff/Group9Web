@@ -1,0 +1,14 @@
+extends layout
+block content
+                ul(class="things")
+                    li Score 200
+                    br
+                    each item in characterOrder
+                        div(class='menu-item')
+                            if item.id > 2
+                                li #{item.id}. You got this one wrong   |    The hiragana is #{item.hiragana}   |   The romaji is (#{item.romaji})
+                                br
+                            else
+                                li #{item.id}. You got this one correct   |    The hiragana is #{item.hiragana}   |   The romaji is (#{item.romaji})
+                                br
+                            

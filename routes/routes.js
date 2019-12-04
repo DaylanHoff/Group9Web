@@ -95,6 +95,23 @@ router.route("/games/:gameId").get(
     }
 );
 
+router.route("/ScoreSheet/:Answered").post(
+    async function (req, res) {
+        var UsersFromDB = await User.find();
+        Japanese.find(function (err, japanese) {
+            console.log(req.body.score)
+            var model = {
+                title: "Score",
+                username : req.session.username,
+                userId : req.session.userId,
+                isAdmin : req.session.isAdmin,
+                characterOrder : japanese,
+                score: req.body.score
+            };
+            res.render("ScoreSheet", model);
+        });
+    }
+);
 
 router.route("/admin").get(
     async function (req, res) {

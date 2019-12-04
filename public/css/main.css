@@ -333,3 +333,7 @@ aside#sidebar button {
         text-align: left;
         width: 200px;
       }
+
+      .things {
+          text-align: center;
+      }

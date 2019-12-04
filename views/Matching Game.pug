@@ -1,0 +1,31 @@
+extends layout.pug
+block content
+    link(href="/js/Matching Game.js" type="text/javascript")
+    link(href="/css/Matching Game.css", rel="stylesheet", type="text/css")
+    link(href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet")
+    h2(style='text-align: center; padding-top: 15px;float:center;')
+        |Matching Game
+    div(id='infoTable')
+        h2
+            |Match this character with it's romaji counterpart
+        p(class='hiragana' id="shat")
+            |あ
+        div(id="nyoom") Time Remaining:
+            |60.00
+        div(id="score") Score:
+            |00
+        button(type="submit" id="Play") Play 
+
+        button(type="submit").buttonReset#Reset Reset
+
+    table#matchingTable
+        -for(var i = 0; i < 4; i++){
+            tr
+            -for(var x = 0; x < 4; x++){
+                td
+                    button(id='#{i + "" + x}' class = 'buttonDefault')
+                        -var randomNumber = Math.round(Math.random())
+                        |#{characterOrder[randomNumber].hiragana}
+                -}
+            -}
+    script(src='../js/Matching Game.js')

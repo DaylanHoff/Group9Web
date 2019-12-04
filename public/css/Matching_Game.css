@@ -1,0 +1,86 @@
+#matchingTable{
+    padding-top: 40px;
+    text-align:center; 
+    margin-left:auto;
+    margin-right:90px;  
+    float: right;
+}
+.buttonPlay{
+    font-size:30px;
+    border-radius: 25px;
+    padding-top:6px;
+    padding-bottom:6px;
+    background: rgb(48, 211, 240);
+    width:50%;
+}
+.buttonReset{
+    width:50%;
+    font-size:30px;
+    padding-top:6px;
+    padding-bottom:6px;
+    border-radius: 25px;
+    background: rgb(48, 211, 240);
+}
+#infoTable{
+    margin-top:45px;
+    margin-left:250px;
+    padding-top: 20px;
+    text-align:center; 
+    align-content: center;
+    margin-right:auto;  
+    float: left; 
+    border-radius: 25px;
+    border: 2px solid  #A85603;
+    padding: 20px;
+}
+
+.hiragana{
+    padding: 50px;
+    font-size: 60px;
+    border-radius: 25px;
+    background: rgb(48, 211, 240);
+
+}
+.buttonDefault{
+    font-size:60px;
+    border-radius: 25px;
+    background: rgb(48, 211, 240);
+    padding: 20px;
+    width: 200px;
+    height: 178px;
+}
+.buttonCorrect{
+    border-radius: 25px;
+    background: #22AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+.buttonIncorrect{
+    border-radius: 25px;
+    background: rgb(255, 25, 60);
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+#nyoom{
+    text-align:center;
+    height:65px;
+    border: 2px solid #639;
+    border-radius: 25px;
+    font-size:30px;
+    margin:15px;
+    vertical-align: auto;
+    text-align:center;
+    padding-top:15px;
+}
+#score{
+    height:65px;
+    font-size:30px; 
+    border: 2px solid#639;
+    border-radius: 25px;
+    margin:15px;
+    padding-top:15px;
+    vertical-align: auto;
+    text-align:center;
+}
