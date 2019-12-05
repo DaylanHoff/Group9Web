@@ -1,0 +1,27 @@
+extends layout
+block content
+    div(class="Wrapper")
+        br
+        h2(id="safeTimerDisplay") 1:00
+        br
+        h2(id="score" name="score") 0
+        br
+        br
+        br
+        br
+        br
+        form(method="POST" action="/ScoreSheet/67" id="flashCardsForm" onsubmit="return end()")
+            for char in characterOrder
+                h1(class="Title" id="character" + char.id) #{char.hiragana}
+                p(id='answer' + char.id class="answers") #{char.romaji}
+            div(class="Input")
+                br
+                br
+                br
+                br
+                input(id="answerBox" name="answerBox" type="text" class="flashCards")
+        br
+        br
+        br
+        
+    script(src='../js/flashcards.js')

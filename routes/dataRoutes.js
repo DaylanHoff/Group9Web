@@ -82,7 +82,7 @@ router.route("/newGame").post(
                 }
             );
             newGame.save();
-            res.redirect("/games/detail/"+id);
+            res.redirect("/games");
         }
     }
 );
@@ -93,11 +93,31 @@ router.route("/deleteAllGames").get(
             res.redirect("/user/login");
         }else{
             console.log("Deleting all Games");
-            var games = await Games.find();
+            var games = await Game.find();
             for (var index in games) {
                 var games = games[index];
                 console.log("Deleting game with id: " + game._id);
                 await game.deleteOne({ _id: game._id });
+            }
+
+            res.redirect("/games");
+        }
+    }
+);
+
+router.route("/deleteGame/:gameId").get(
+    async function (req, res) {
+        if(!req.session.isAdmin){
+            res.redirect("/user/login");
+        }else{
+            var gameId = req.params.gameId;
+            var game = await Game.findOne({_id:gameId});
+            console.log(game);
+
+            if (game) {
+            console.log("Deleting Game");
+                await game.deleteOne({ _id:gameId});
+            
             }
 
             res.redirect("/games");

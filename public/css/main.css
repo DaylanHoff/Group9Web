@@ -334,6 +334,12 @@ aside#sidebar button {
         width: 200px;
       }
 
+      .bgimg {
+        height: 300px;
+        width: fill;
+        background-image:url(../img/bg.jpg);
+      }
+
       .things {
           text-align: center;
       }

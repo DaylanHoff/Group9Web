@@ -18,6 +18,7 @@ const GamesSchema = new Schema(
         imageUrl: String
     },
 );
+
 const JapaneseSchema = new Schema(
     {
         _id: Number,
@@ -25,6 +26,7 @@ const JapaneseSchema = new Schema(
         hiragana: String
     }
 )
+
 const UserSchema = new Schema(
     {
         _id: ObjectId,
@@ -37,8 +39,8 @@ const UserSchema = new Schema(
     {collection: "users"}
 );
 const Game = mongoose.model("Game", GamesSchema);
-const User = mongoose.model("User", UserSchema);
 const Japanese = mongoose.model("hiragana", JapaneseSchema);
+const User = mongoose.model("User", UserSchema);
 const router = express.Router();
 
 router.route("/").get(
